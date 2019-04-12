@@ -10,12 +10,17 @@ j = 0
 while j < keyword.size
   
   browser.cleanCookies()
+  puts "1- Navigare to http://upwork.com"
   browser.navigateto(url)
   #Send keys to freelancers bar
+  #Send keys to freelancers bar
+  puts "2- Click on Free Lancers Bsearch bar"
+  puts "3- Enter the keywork for the search"
   browser.freelancers_search_bar().send_keys(keyword[j])
   
   browser.wait_for(2)
   #click en search
+  puts "4- Click on search button"
   browser.search_bnt().click
   
   browser.wait_for(2)
@@ -32,6 +37,7 @@ while j < keyword.size
   else 
   puts "No results found"
   end
+  puts "5- Select any freelancers"
   num = rand(3)
   results[num].click
   freelancer_name = browser.freelancers_name()
@@ -41,9 +47,8 @@ while j < keyword.size
     else  
       puts "The freelancers name are not the same"
     end
-    puts freelancer_name + ' - ' + freelancers[num]
   end
-  
+  puts "The freelancer selected was " +  freelancers[num]
   browser.backFreelancersList().click
   j = j + 1
 end
