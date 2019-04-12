@@ -1,9 +1,5 @@
 require_relative 'elements.rb'
-
-
-keyword = 'Marco'
-
-  
+ 
   #define new browser
   puts "1- Navigare to http://upwork.com"
   browser=SiteElement.new("http://upwork.com")
